@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "MobileExample",
+    "slug": "mobile-example",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.crossproject.mobile"
+    },
+    "ios": {
+      "bundleIdentifier": "com.crossproject.mobile"
+    }
+  }
+}
