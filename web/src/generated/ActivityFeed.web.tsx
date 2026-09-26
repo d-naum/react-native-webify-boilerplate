@@ -33,7 +33,11 @@ const DEFAULT_ITEMS: ActivityItem[] = [
         status: "warning",
     },
 ];
-export const ActivityFeed = () => {
+export type ActivityFeedProps = {
+    items?: ActivityItem[];
+    onItemPress?: (item: ActivityItem) => void;
+};
+export const ActivityFeed = ({ items = DEFAULT_ITEMS, onItemPress }: ActivityFeedProps = {}) => {
     return (<article style={{
         backgroundColor: "#ffffff",
         borderRadius: "12px",
@@ -73,7 +77,7 @@ export const ActivityFeed = () => {
         width: "100%"
     }}/>
 
-        {DEFAULT_ITEMS.map(item => <button style={{
+        {items.map(item => <button style={{
         display: "inline-flex",
         cursor: "pointer",
         border: "none",
@@ -82,7 +86,7 @@ export const ActivityFeed = () => {
         paddingTop: "4px",
         paddingBottom: "4px",
         width: "100%", display: "flex"
-    }} onClick={() => console.log(item.id)} key={item.id}>
+    }} onClick={() => onItemPress?.(item)} key={item.id}>
               <div style={{
         display: "flex",
         flexDirection: "row",

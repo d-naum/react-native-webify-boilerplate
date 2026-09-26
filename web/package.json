@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "compile:ui": "node ../../dist/cli.js build -i ../mobile/components -o ./src/generated",
+    "compile:ui": "webify build -i ../mobile/components -o ./src/generated",
     "dev": "npm run compile:ui && vite",
-    "build": "npm run compile:ui && tsc -b && vite build",
+    "build": "npm run compile:ui && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "@groooh/react-native-webify": "file:../../"
+    "@groooh/react-native-webify": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",

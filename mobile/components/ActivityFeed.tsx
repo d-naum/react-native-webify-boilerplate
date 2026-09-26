@@ -48,7 +48,12 @@ const DEFAULT_ITEMS: ActivityItem[] = [
   },
 ];
 
-export const ActivityFeed = () => {
+export type ActivityFeedProps = {
+  items?: ActivityItem[];
+  onItemPress?: (item: ActivityItem) => void;
+};
+
+export const ActivityFeed = ({ items = DEFAULT_ITEMS, onItemPress }: ActivityFeedProps = {}) => {
   return (
     <Card padding="md">
       <Stack gap="sm">
@@ -60,14 +65,14 @@ export const ActivityFeed = () => {
         <Divider />
 
         <FlatList
-          data={DEFAULT_ITEMS}
+          data={items}
           scrollEnabled={false}
           keyExtractor={(item: ActivityItem) => item.id}
           renderItem={({ item }: { item: ActivityItem }) => (
             <Pressable
               paddingY="xs"
               style={{ width: "100%", display: "flex" }}
-              onPress={() => console.log(item.id)}
+              onPress={() => onItemPress?.(item)}
             >
               <Row
                 align="center"

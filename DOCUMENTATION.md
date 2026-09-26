@@ -675,7 +675,7 @@ Comprehensive product tile featuring image carousel, promotional badge, interact
 />
 ```
 
-> 📖 **Full Components & Events Guide**: For deep API signatures, token customization, and item tap event callbacks for all 35+ components, see [docs/COMPONENTS_REFERENCE.md](file:///f:/Dev/cross-platform-ui/docs/COMPONENTS_REFERENCE.md).
+> 📖 **Full Components & Events Guide**: For deep API signatures, token customization, and item tap event callbacks for all 35+ components, see [docs/COMPONENTS_REFERENCE.md](docs/COMPONENTS_REFERENCE.md).
 
 ---
 
