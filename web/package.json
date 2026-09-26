@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "compile:ui": "webify build -i ../mobile/components -o ./src/generated",
+    "compile:ui": "node -e \"const fs=require('fs'); if(fs.existsSync('../mobile/components')){require('child_process').execSync('webify build -i ../mobile/components -o ./src/generated',{stdio:'inherit'});}else{console.log('Using pre-compiled web components in src/generated');}\"",
     "dev": "npm run compile:ui && vite",
     "build": "npm run compile:ui && vite build",
     "lint": "oxlint",
